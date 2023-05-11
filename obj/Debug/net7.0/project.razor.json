@@ -18650,6 +18650,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/colerose/Documents/CIDM 3312/final-project/Pages/Contact/ContactInfo.cshtml",
+      "TargetPath": "Pages\\Contact\\ContactInfo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/colerose/Documents/CIDM 3312/final-project/Pages/Index.cshtml",
       "TargetPath": "Pages\\Index.cshtml",
       "FileKind": "mvc"
