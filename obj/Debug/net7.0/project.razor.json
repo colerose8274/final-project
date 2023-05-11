@@ -18645,6 +18645,11 @@
   "RootNamespace": "final_project",
   "Documents": [
     {
+      "FilePath": "/Users/colerose/Documents/CIDM 3312/final-project/Pages/Episodes/Create.cshtml",
+      "TargetPath": "Pages\\Episodes\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/colerose/Documents/CIDM 3312/final-project/Pages/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -18682,6 +18687,11 @@
     {
       "FilePath": "/Users/colerose/Documents/CIDM 3312/final-project/Pages/Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/colerose/Documents/CIDM 3312/final-project/Pages/Episodes/Index.cshtml",
+      "TargetPath": "Pages\\Episodes\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

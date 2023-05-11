@@ -20,6 +20,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29udGFjdC9Db250YWN0SW5mby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/colerose/Documents/CIDM 3312/final-project/Pages/Episodes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXBpc29kZXMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/colerose/Documents/CIDM 3312/final-project/Pages/Episodes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXBpc29kZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/colerose/Documents/CIDM 3312/final-project/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
