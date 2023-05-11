@@ -8,7 +8,9 @@ namespace FinalProject.Models
         public int Id { get; set; }
 
         [Required]
-        public string Name { get; set; } = default!;
+        public string FirstName { get; set; } = default!;
+        public string LastName { get; set; } = default!;
+
 
         // Navigation property for ratings
         public ICollection<Rating> Ratings { get; set; } = default!;

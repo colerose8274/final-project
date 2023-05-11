@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using FinalProject.Data;
 using FinalProject.Models;
+using FinalProject.Data;
 
 namespace FinalProject.Controllers
 {
@@ -15,86 +13,57 @@ namespace FinalProject.Controllers
             _context = context;
         }
 
-        public IActionResult Index(int page = 1, int pageSize = 10, string sortBy = "Title", string sortOrder = "asc", string searchQuery = "")
+        // GET: Episodes
+        public IActionResult Index()
         {
-            // Calculate the number of records to skip based on the requested page
-            int skip = (page - 1) * pageSize;
+            // Retrieve episodes from the database
+            var episodes = _context.Episodes;
 
-            // Retrieve a subset of episodes based on the page size, number, and search query
-            var episodesQuery = _context.Episodes.AsQueryable();
-
-            // Apply search query
-            episodesQuery = ApplySearch(episodesQuery, searchQuery);
-
-            // Apply sorting
-            episodesQuery = ApplySorting(episodesQuery, sortBy, sortOrder);
-
-            // Get the total number of episodes
-            int totalEpisodes = episodesQuery.Count();
-
-            // Calculate the total number of pages based on the page size
-            int totalPages = (int)Math.Ceiling((double)totalEpisodes / pageSize);
-
-            // Retrieve the episodes for the current page
-            var episodes = episodesQuery
-                .Skip(skip)
-                .Take(pageSize)
-                .ToList();
-
-            // Pass the episodes, current page, total pages, sorting options, and search query to the view
-            ViewData["Episodes"] = episodes;
-            ViewData["CurrentPage"] = page;
-            ViewData["TotalPages"] = totalPages;
-            ViewData["SortBy"] = sortBy;
-            ViewData["SortOrder"] = sortOrder;
-            ViewData["SearchQuery"] = searchQuery;
-
-            return View();
+            // Pass the episodes to the view
+            return View(episodes);
         }
 
-        private IQueryable<Episode> ApplySearch(IQueryable<Episode> query, string searchQuery)
+        // GET: Episodes/Details/5
+        public IActionResult Details(int? id)
         {
-            if (!string.IsNullOrEmpty(searchQuery))
+            if (id == null)
             {
-                query = query.Where(e => e.Title.Contains(searchQuery));
+                return NotFound();
             }
 
-            return query;
-        }
-
-        private IQueryable<Episode> ApplySorting(IQueryable<Episode> query, string sortBy, string sortOrder)
-        {
-            switch (sortBy)
-            {
-                case "Title":
-                    query = sortOrder == "asc" ? query.OrderBy(e => e.Title) : query.OrderByDescending(e => e.Title);
-                    break;
-                case "Rating":
-                    query = sortOrder == "asc" ? query.OrderBy(e => e.Rating) : query.OrderByDescending(e => e.Rating);
-                    break;
-                // Add more sorting options if needed
-            }
-
-            return query;
-        }
-
-        public IActionResult Details(int id)
-        {
-            Episode episode = _context.Episodes.Include(e => e.Ratings).FirstOrDefault(e => e.Id == id);
+            // Retrieve the episode with the specified ID from the database
+            var episode = _context.Episodes.Find(id);
 
             if (episode == null)
             {
                 return NotFound();
             }
 
-            List<Rating> ratings = episode.Ratings;
+            return View(episode);
+        }
 
-            // Pass the episode and its ratings to the view
-            ViewData["Episode"] = episode;
-            ViewData["Ratings"] = ratings;
-
+        // GET: Episodes/Create
+        public IActionResult Create()
+        {
             return View();
-}
+        }
+
+        // POST: Episodes/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create([Bind("Title,Description")] Episode episode)
+        {
+            if (ModelState.IsValid)
+            {
+                // Save the new episode to the database
+                _context.Episodes.Add(episode);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(episode);
+        }
+
+        // Other action methods...
 
     }
 }

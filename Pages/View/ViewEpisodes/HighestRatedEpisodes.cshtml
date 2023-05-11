@@ -1,0 +1,47 @@
+@model final_project.Pages
+
+<h2>Highest Rated Episodes</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+<ol>
+    <li>Breaking Bad: 'Ozymadias' - Rating: 10</li>
+    <li>Six Feet Under: 'Everyones Waiting' - Rating: 9.9</li>
+    <li>Attack On Titan: 'Midnight Sun' - Rating: 9.9</li>
+    <li>Bojack Horseman: 'the View From Halfway Down' - Rating: 9.9</li>
+    <li>VInland Saga: 'End Of The Prologue' - Rating: 9.9</li>
+    <li>Breaking Bad: 'Felina' - Rating: 9.9</li>
+    <li>Attack On Titan: 'Hero' - Rating: 9.9</li>
+    <li>Attack On Titan: 'Perfect Game' - Rating: 9.9</li>
+    <li>Game of Thrones - 'Battle of the Bastards' - Rating: 9.9</li>
+    <li>Game of Thrones - 'The Winds of Winter' - Rating: 9.9</li>
+    <li>Breaking Bad - 'Felina' - Rating: 9.9</li>
+    <li>Game of Thrones - 'The Rains of Castamere' - Rating: 9.9</li>
+    <li>Breaking Bad - 'Face Off' - Rating: 9.9</li>
+    <li>Better Call Saul - 'Plan and Execution' - Rating: 9.9</li>
+    <li>Mr. Robot - '407 Proxy Authentication Required' - Rating: 9.8</li>
+    <li>Star Wars: The Clone Wars - 'Victory and Death' - Rating: 9.8</li>
+    <li>Star Wars: The Clone Wars - 'The Phantom Apprentice' - Rating: 9.8</li>
+    <li>Star Wars: The Clone Wars - 'Shattered' - Rating: 9.8</li>
+    <li>Avatar: The Last Airbender - 'Sozin's Comet, Part 4: Avatar Aang' - Rating: 9.8</li>
+    <li>Six Feet Under - 'Everyone's Waiting' - Rating: 9.8</li>
+    <li>Chernobyl - 'Vichnaya Pamyat' - Rating: 9.8</li>
+    <li>The Mandalorian - 'Chapter 16: The Rescue' - Rating: 9.8</li>
+    <li>Breaking Bad - 'To'hajiilee' - Rating: 9.8</li>
+    <li>Better Call Saul - 'Saul Gone' - Rating: 9.8</li>
+    <li>Better Call Saul - 'Point and Shoot' - Rating: 9.8</li>
+</ol>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var episode in Model)
+        {
+            <tr>
+                <td>@episode.Title</td>
+                <td>@episode.Rating</td>
+            </tr>
+        }
+    </tbody>
+</table>

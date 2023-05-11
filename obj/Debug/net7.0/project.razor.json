@@ -18660,6 +18660,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/colerose/Documents/CIDM 3312/final-project/Pages/View/Episodes/HighestRatedEpisodes.cshtml",
+      "TargetPath": "Pages\\View\\Episodes\\HighestRatedEpisodes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/colerose/Documents/CIDM 3312/final-project/Pages/_ViewImports.cshtml",
       "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
