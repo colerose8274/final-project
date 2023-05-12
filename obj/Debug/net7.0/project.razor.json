@@ -18685,6 +18685,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/colerose/Documents/CIDM 3312/final-project/Pages/Episodes/AddReview.cshtml",
+      "TargetPath": "Pages\\Episodes\\AddReview.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/colerose/Documents/CIDM 3312/final-project/Pages/Episodes/Details.cshtml",
+      "TargetPath": "Pages\\Episodes\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/colerose/Documents/CIDM 3312/final-project/Pages/Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
       "FileKind": "mvc"
